@@ -1,0 +1,21 @@
+<div class="box"> 
+ 
+    <h6 class='a1'>ToDoListComponent</h6>
+    <div *ngFor='let item of arraytask' class="boxall button">
+        <p class='boxtask' [class.selected]="check.includes(item)" (click)="select(item)">{{ item.name }}
+            <button (click)="deletetask(item)" class="boxdel">Delete</button></p>
+    </div>
+    <div class="f" *ngIf='a===1'>
+        <h5 style="text-align: left; padding: 5px 0 5px 15px;">Add task</h5>
+        <p style="padding-left: 39px;">Name: <input [(ngModel)]='Name'/></p>
+        <p>Description: <input [(ngModel)]='Description'/></p>
+        <button (click)="Addtask()" class="butt">Add</button>
+    </div>
+    <div class="g" *ngIf='a===2'>
+        <h5 style="text-align: center; padding: 5px 0 5px 15px;">Task: {{ check[0].name }}</h5>
+        <h6 style="display: inline-flex;">Description: </h6><span style="margin-bottom: 20px;padding-bottom: 20px;"> {{ check[0].description }}</span>
+    </div>
+
+
+
+</div>
