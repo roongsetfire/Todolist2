@@ -10,9 +10,10 @@ import { Task } from '../task';
 export class TodoListComponent implements OnInit {
   @Input() Name: string; Description: string; 
   arraytask: Task[];
-  task
-  check
+  task;
+  check: Task[];
   a: number;
+  
   
   constructor() {
   
@@ -43,9 +44,18 @@ export class TodoListComponent implements OnInit {
       this.arraytask = this.arraytask.filter(item => item.name!== x.name); 
   }
   select(x){
+    
+    if (this.a==1){
+      this.a=2
+    }else{
+      this.a=1
+    }
+    if (!(this.check.includes(x))){
+      this.a=3
+    }
     this.check = []
     this.check.push(x)
-    this.a=2
+    
   }
   ngOnInit(): void {
   }

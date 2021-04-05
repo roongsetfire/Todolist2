@@ -1,8 +1,8 @@
 <div class="box"> 
  
     <h6 class='a1'>ToDoListComponent</h6>
-    <div *ngFor='let item of arraytask' class="boxall button">
-        <p class='boxtask' [class.selected]="check.includes(item)" (click)="select(item)">{{ item.name }}
+    <div *ngFor='let item of arraytask' class="boxall">
+        <p class='boxtask' [class.selected]="check.includes(item) && a!==1" (click)="select(item)" [Checkswap]='item'>{{ item.name }}
             <button (click)="deletetask(item)" class="boxdel">Delete</button></p>
     </div>
     <div class="f" *ngIf='a===1'>
@@ -11,7 +11,7 @@
         <p>Description: <input [(ngModel)]='Description'/></p>
         <button (click)="Addtask()" class="butt">Add</button>
     </div>
-    <div class="g" *ngIf='a===2'>
+    <div class="g" *ngIf='a===2 || a===3'  >
         <h5 style="text-align: center; padding: 5px 0 5px 15px;">Task: {{ check[0].name }}</h5>
         <h6 style="display: inline-flex;">Description: </h6><span style="margin-bottom: 20px;padding-bottom: 20px;"> {{ check[0].description }}</span>
     </div>
